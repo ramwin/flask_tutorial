@@ -22,22 +22,11 @@ def readFile(fn,buf_size=262144):
     f.close()
 
 # 传输文件
-@app.route('/file/get', methods=["GET"])
+@app.route('/file', methods=["GET"])
 def get_file():
-    # 获取传递的参数
-    # file_path = request.json["file_path"]
-    # return readFile(file_path)
-    text = open('./test.txt','rb').read()
+    path = request.args['path']
+    text = open(path,'rb').read()
     return text
-    # 原来想用scp的，但是一想，我要不直接就读取数据传递得了
-    # store_path = request.json["store_path"]
-    # try:    # 执行命令
-    #     command = "{scpFile_path} {file_path} {django_user} {django_password} {store_path}".format{
-    #         scpFile_path: scpFile_path,
-    #         file_path: file_path,
-    #         django_user: django_user,
-    #         django_password: django_password,
-    
 
 @app.route('/')
 def index():
