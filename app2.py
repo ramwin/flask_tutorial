@@ -27,7 +27,7 @@ def get_file():
     # 获取传递的参数
     # file_path = request.json["file_path"]
     # return readFile(file_path)
-    text = open('./test.txt','rb').read()
+    text = open('./123.png','rb').read()
     return text
     # 原来想用scp的，但是一想，我要不直接就读取数据传递得了
     # store_path = request.json["store_path"]
