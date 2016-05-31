@@ -65,6 +65,24 @@ def test2():
     print(type('汉字'))
     return json.dumps({'status':'success'}),200
 
+
+# ----------------------------zettage------------------
+@app.route('/getall/v1.0/device/<device_id>/sensor/<sensor_id>/',methods=["GET"])
+@allow_cross_domain
+def getalldata(device_id, sensor_id):
+    all_result = {
+        'sensor_id': '26',
+        'data': [
+            ['2016-01-03 17:55:31','23'],
+            ['2016-01-03 17:56:31','24'],
+            ['2016-01-03 17:57:31','21'],
+            ['2016-01-03 17:58:31','22'],
+            ['2016-01-03 17:59:31','26'],
+            ['2016-01-03 18:00:31','24'],
+            ['2016-01-03 18:01:31','23'],
+        ]
+    }
+    return json.dumps(all_result), 200
 import sys
 def magic(request):
     a= request
